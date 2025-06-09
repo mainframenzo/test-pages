@@ -4,13 +4,19 @@
     <title>John Connor!</title>
   </head>
   <body>
-    <p>John Connor test.</p>
+    <p>John Connor test. Doing work.</p>
+    <iframe id='my-site' src=".."/>
   </body>
-   <script>
 
-     // similar behavior as an HTTP redirect
-     setTimeout(() => {
-      window.location.replace("https://d1flp1f3i9thud.cloudfront.net");
-     }, 3 * 1000);
-</script>
+   <script>
+     var iframe = document.getElementById('myIframe').src = iframe.src;
+     iframe.src = '';
+     document.onload = function() {
+       setTimeout(() => {
+        iframe.src = "https://d1flp1f3i9thud.cloudfront.net";
+        iframe.width = document.width;
+        iframe.height = document.height;
+       }, 3 * 1000);
+     }
+  </script>
 </html>
