@@ -5,17 +5,14 @@
   </head>
   <body>
     <p>John Connor test. Doing work.</p>
-    <iframe id='my-site' src="http://.."/>
+    <iframe width="100%" height="100%" id='my-site' src="http://.."/>
   </body>
 
    <script>
      var iframe = document.getElementById('my-site');
-     iframe.src = '';
      document.onload = function() {
        setTimeout(() => {
-        iframe.src = "https://d1flp1f3i9thud.cloudfront.net";
-        iframe.width = document.width;
-        iframe.height = document.height;
+        document.getElementById('my-site').src = "https://d1flp1f3i9thud.cloudfront.net";
        }, 3 * 1000);
      }
   </script>
