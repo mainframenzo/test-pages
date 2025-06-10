@@ -2,18 +2,23 @@
 <html>
   <head>
     <title>John Connor!</title>
+    <style>
+      .hide-iframe {
+        display: none;
+      }
+    </style>
   </head>
   <body>
     <p>John Connor test. Doing work.</p>
-    <iframe width="100%" height="100%" id="my-site" src="https://.." style="display: none">
+    <iframe width="100%" height="100%" src="https://.." class="hide-iframe">
   </body>
 
    <script>
-     var iframe = document.getElementById('my-site');
      setTimeout(() => {
       console.log("update");
+      var iframe = document.getElementsByTagName('iframe')[0];
+      iframe.onload = function() { iframe.classList.remove('hide-iframe'); };
       iframe.src = "https://d1flp1f3i9thud.cloudfront.net";
-       iframe.style.display = 'visible';
      }, 3 * 1000);
   </script>
 </html>
